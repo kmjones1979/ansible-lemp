@@ -1,0 +1,15 @@
+- name: install php
+  yum:
+    name: php
+    state: latest
+
+- name: install php-mysql
+  yum:
+    name: php-mysql
+    state: latest
+
+
+- name: install php-fpm
+  yum:
+    name: php-fpm
+    state: latest
