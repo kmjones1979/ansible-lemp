@@ -3,9 +3,13 @@
 - hosts: lemp
   remote_user: kjones
   sudo: yes
+  vars_files:
+    - 'vars.yml'
   tasks:
     - include: 'tasks/install_dependencies.yml'
     - include: 'tasks/install_nginx_plus.yml'
     - include: 'tasks/install_mariadb.yml'
     - include: 'tasks/install_php.yml'
-
+    - include: 'tasks/install_wordpress.yml'
+    - include: 'tasks/configure_database.yml'
+    - include: 'tasks/copy_configurations.yml'
