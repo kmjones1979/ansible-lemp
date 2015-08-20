@@ -1,0 +1,4 @@
+- name: install wordpress
+  yum:
+    name: wordpress
+    state: latest

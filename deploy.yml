@@ -1,7 +1,10 @@
 # ./deploy.yml
 
 - hosts: lemp
+  remote_user: kjones
+  sudo: yes
   tasks:
+    - include: 'tasks/install_dependencies.yml'
     - include: 'tasks/install_nginx_plus.yml'
     - include: 'tasks/install_mariadb.yml'
     - include: 'tasks/install_php.yml'
