@@ -7,3 +7,9 @@
   yum:
     name: mariadb-server
     state: latest
+
+- name: start mariadb service
+  service:
+    name: mariadb
+    enabled: yes
+    state: started

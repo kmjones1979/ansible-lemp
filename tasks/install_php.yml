@@ -13,3 +13,9 @@
   yum:
     name: php-fpm
     state: latest
+
+- name: start php-fpm
+  service:
+    name: php-fpm
+    enabled: yes
+    state: started
