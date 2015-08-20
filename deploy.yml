@@ -1,0 +1,8 @@
+# ./deploy.yml
+
+- hosts: lemp
+  tasks:
+    - include: 'tasks/install_nginx_plus.yml'
+    - include: 'tasks/install_mariadb.yml'
+    - include: 'tasks/install_php.yml'
+
