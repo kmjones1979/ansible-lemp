@@ -3,5 +3,10 @@
     name: epel-release
     state: latest
 
+- name: install mysql-python
+  yum:
+    name: MySQL-python
+    state: latest
+
 - name: upgrade all packages
   yum: name=* state=latest

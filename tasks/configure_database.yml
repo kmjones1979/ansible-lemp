@@ -11,7 +11,13 @@
   mysql_db: name=test state=absent
 
 - name: create wordpress database
-  mysql_db: name={{ wordpres_db_name }} state=present
+  mysql_db: name={{ wordpress_db_name }} state=present
 
 - name: create wordpress user
   mysql_user: name={{ wordpress_db_user }} password={{ wordpress_db_password }} priv={{ wordpress_db_name }}.*:ALL state=present
+
+- name: reload privilege tables
+  command: 'mysql -ne "{{ item }}"'
+  with_items:
+    - FLUSH PRIVILEGES
+

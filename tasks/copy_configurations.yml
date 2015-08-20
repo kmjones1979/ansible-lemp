@@ -7,5 +7,10 @@
 - name: copy nginx-plus configuration file default.conf
   template: src=templates/etc/nginx/conf.d/default.conf dest=/etc/nginx/conf.d/default.conf owner=root mode=0600
 
+- name: reload nginx
+  service:
+    name: nginx
+    state: restarted
+
 - name: copy wordpress configuration file wp-config.php
-  template: src=templates/etc/wordpress/wp-config.php dest=/etc/wordpres/wp-config.php owner=root mode=0600
+  template: src=templates/etc/wordpress/wp-config.php.j2 dest=/etc/wordpress/wp-config.php owner=root mode=0600

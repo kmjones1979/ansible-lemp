@@ -19,3 +19,8 @@
   yum:
     name: nginx-plus
     state: latest
+
+- name: NGINX Plus | Starting NGINX Plus
+  service:
+    name: nginx
+    state: restarted
