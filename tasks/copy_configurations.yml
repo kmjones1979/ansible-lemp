@@ -1,8 +1,8 @@
 - name: copy php-fpm configuration file php.ini
-  template: src=templates/etc/php.ini dest=/etc/php.ini owner=root mode=0600
+  template: src=templates/etc/php.ini dest=/etc/php.ini owner=root mode=0644
 
 - name: copy php-fpm configuration file www.conf
-  template: src=templates/etc/php-fpm.d/www.conf dest=/etc/php-fpm.d/www.conf owner=root mode=0600
+  template: src=templates/etc/php-fpm.d/www.conf dest=/etc/php-fpm.d/www.conf owner=root mode=0644
 
 - name: reload php-fpm
   service:
@@ -10,7 +10,7 @@
     state: restarted
 
 - name: copy nginx-plus configuration file default.conf
-  template: src=templates/etc/nginx/conf.d/default.conf dest=/etc/nginx/conf.d/default.conf owner=root mode=0600
+  template: src=templates/etc/nginx/conf.d/default.conf dest=/etc/nginx/conf.d/default.conf owner=root mode=0644
 
 - name: reload nginx
   service:
@@ -18,5 +18,5 @@
     state: restarted
 
 - name: copy wordpress configuration file wp-config.php
-  template: src=templates/etc/wordpress/wp-config.php.j2 dest=/etc/wordpress/wp-config.php owner=root mode=0600
+  template: src=templates/etc/wordpress/wp-config.php.j2 dest=/etc/wordpress/wp-config.php owner=root mode=0644
 
