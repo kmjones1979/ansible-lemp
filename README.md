@@ -1,10 +1,10 @@
-## Ansible Playbook - Install and configure a LEMP Stack with NGINX Plus, PHP-FPM, Wordpress and Mariadb on CentOS 7.1
+## Ansible Playbook - A simple easy deployment of LEMP with Wordpress using Ansible
 
 This playbook will...
 - Install CentOS epel-release
 - Install MySQL-python
 - Install Mariadb
-- Install NGINX Plus
+- Install NGINX or NGINX Plus
 - Install PHP-FPM
 - Install Wordpress
 - Secure the default MySQL installation
@@ -40,7 +40,6 @@ nginx_yum_rpm: "http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cen
 example[1-4].com
 example.com
 127.0.0.1
-
 ```
 
 ### Copy your NGINX Plus key and certificate to /etc/ssl/nginx
@@ -59,7 +58,10 @@ Visit https://www.nginx.com/#free-trial for a free trial of NGINX Plus.
 
 0 directories, 2 files
 ```
-NOTE: If you want to install NGINX F/OSS you can change the line in deploy.yml from
+
+### NGINX Open source deployment
+
+If you want to install NGINX F/OSS instead of Plus you can change the line in deploy.yml from
 
 ```
     - include: 'tasks/install_nginx_plus.yml'
@@ -69,6 +71,8 @@ to...
 ```
     - include: 'tasks/install_nginx.yml'
 ```
+
+Also be sure to specify the proper version in your variable file under "nginx_yum_rpm"
 
 #### Add your SSH key to the target hosts authorized_keys file
 
