@@ -45,5 +45,5 @@ ansible-playbook deploy.yml
 
 Finish setting up your Wordpress installation
 
-http://<yourdomain>/wp-admin/install.php
+http://yourwordpresssite.com/wp-admin/install.php
 
