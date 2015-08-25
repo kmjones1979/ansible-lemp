@@ -26,6 +26,9 @@ wordpress_db_name: "database"
 # wordpress database variables
 wordpress_db_user: "username"
 wordpress_db_password: "password"
+
+# nginx repo rpm location (NGINX F/OSS only)
+nginx_yum_rpm: "http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm"
 ```
 
 #### Edit your Ansible hosts file to include target hosts
@@ -55,6 +58,16 @@ Visit https://www.nginx.com/#free-trial for a free trial of NGINX Plus.
 └── nginx-repo.key
 
 0 directories, 2 files
+```
+NOTE: If you want to install NGINX F/OSS you can change the line in deploy.yml from
+
+```
+    - include: 'tasks/install_nginx_plus.yml'
+```
+to...
+
+```
+    - include: 'tasks/install_nginx.yml'
 ```
 
 #### Add your SSH key to the target hosts authorized_keys file

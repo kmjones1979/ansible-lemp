@@ -1,7 +1,7 @@
 # ./tasks/install_nginx.yml
 
 - name: install the nginx rpm
-  yum: name=http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm state=present
+  yum: name={{ nginx_yum_rpm }} state=present
 
 - name: NGINX | Installing NGINX
   yum:
