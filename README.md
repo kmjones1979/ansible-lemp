@@ -1,4 +1,5 @@
 ## Ansible Playbook - Install and configure a LEMP Stack with NGINX Plus, PHP-FPM, Wordpress and Mariadb on CentOS 7.1
+
 This playbook will...
 - Install CentOS epel-release
 - Install MySQL-python
@@ -11,7 +12,8 @@ This playbook will...
 
 ## Setup
 
-1. Create a vars.yml with your Ansible deployment variables
+#### Create a vars.yml with your Ansible deployment variables
+
 ```
 # ./vars.yml 
 
@@ -24,15 +26,37 @@ wordpress_db_user: "username"
 wordpress_db_password: "password"
 ```
 
-2. Edit your Ansible hosts file to target hosts
+#### Edit your Ansible hosts file to target hosts
+
 ```
 # /etc/ansible/hosts
 
 [lemp]
-<hostname or ip address>
+example[1-4].com
+example.com
+127.0.0.1
+
 ```
 
-3. Add your SSH key to the target hosts authorized_keys file
+### Copy your NGINX Plus key and certificate to /etc/ssl/nginx
+
+These files are provided to users evaluating or who have purchased NGINX Plus.
+
+Visit https://www.nginx.com/#contact-us for more information.
+
+Visit https://www.nginx.com/#free-trial for a free trial of NGINX Plus.
+
+```
+[kjones@ansible ~]$ tree /etc/ssl/nginx/
+/etc/ssl/nginx/
+├── nginx-repo.crt
+└── nginx-repo.key
+
+0 directories, 2 files
+```
+
+#### Add your SSH key to the target hosts authorized_keys file
+
 https://help.ubuntu.com/community/SSH/OpenSSH/Keys
 
 ## Deployment
