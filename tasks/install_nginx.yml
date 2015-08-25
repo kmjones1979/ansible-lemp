@@ -1,0 +1,14 @@
+# ./tasks/install_nginx.yml
+
+- name: install the nginx rpm
+  yum: name=http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm state=present
+
+- name: NGINX | Installing NGINX Plus
+  yum:
+    name: nginx
+    state: latest
+
+- name: NGINX | Starting NGINX Plus
+  service:
+    name: nginx
+    state: restarted
