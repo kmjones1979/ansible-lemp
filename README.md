@@ -19,9 +19,6 @@ Specify your environment specific variables. It is reccomended to make complex p
 ```
 # ./vars.yml 
 
-# ansible variables
-ansible_user: "linux_username"
-
 # database variables
 root_db_password:  "password"
 wordpress_db_name: "database"
@@ -32,6 +29,16 @@ wordpress_db_password: "password"
 
 # nginx repo rpm location (NGINX F/OSS only)
 nginx_yum_rpm: "http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm"
+```
+
+#### Edit deploy.yml to include the username for the deployment
+
+Keep in mind this configuration file is in YAML format and must have proper spacing.
+
+Visit http://docs.ansible.com/ansible/YAMLSyntax.html for more info.
+
+```
+  remote_user: username
 ```
 
 #### Edit your Ansible hosts file to include target hosts
