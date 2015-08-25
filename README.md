@@ -14,6 +14,8 @@ This playbook will...
 
 #### Create a vars.yml with your Ansible deployment variables
 
+It is reccomended to make complex passwords and not use the examples below.
+
 ```
 # ./vars.yml 
 
@@ -26,7 +28,7 @@ wordpress_db_user: "username"
 wordpress_db_password: "password"
 ```
 
-#### Edit your Ansible hosts file to target hosts
+#### Edit your Ansible hosts file to include target hosts
 
 ```
 # /etc/ansible/hosts
@@ -57,7 +59,7 @@ Visit https://www.nginx.com/#free-trial for a free trial of NGINX Plus.
 
 #### Add your SSH key to the target hosts authorized_keys file
 
-https://help.ubuntu.com/community/SSH/OpenSSH/Keys
+Visit https://help.ubuntu.com/community/SSH/OpenSSH/Keys for instructions.
 
 ## Deployment
 
@@ -67,7 +69,7 @@ ansible-playbook deploy.yml
 
 ## Configuration
 
-Finish setting up your Wordpress installation
+Finish setting up your Wordpress installation by visiting the admin page.
 
 http://yourwordpresssite.com/wp-admin/install.php
 
