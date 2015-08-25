@@ -14,10 +14,13 @@ This playbook will...
 
 #### Create a vars.yml with your Ansible deployment variables
 
-It is reccomended to make complex passwords and not use the examples below.
+Specify your environment specific variables. It is reccomended to make complex passwords and not use the examples below.
 
 ```
 # ./vars.yml 
+
+# ansible variables
+ansible_user: "linux_username"
 
 # database variables
 root_db_password:  "password"

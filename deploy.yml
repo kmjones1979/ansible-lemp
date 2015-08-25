@@ -1,7 +1,7 @@
 # ./deploy.yml
 
 - hosts: lemp
-  remote_user: kjones
+  remote_user: {{ ansible_user }}
   sudo: yes
   vars_files:
     - 'vars.yml'
